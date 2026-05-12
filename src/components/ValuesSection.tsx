@@ -78,7 +78,7 @@ const ValuesSection = () => {
         {/* Quote section */}
         <div className="mt-20 max-w-3xl mx-auto text-center">
           <blockquote className="text-2xl md:text-3xl font-heading font-medium text-foreground italic leading-relaxed">
-            "We don't just make games—we make moments. Moments of laughter, wonder, and connection that stay with you long after the credits roll."
+            "We don't just make games;  we make moments. Moments of laughter, wonder, and connection that stay with you long after the credits roll."
           </blockquote>
           {/* <div className="mt-6 flex items-center justify-center gap-4">
             <div className="w-12 h-12 border-2 border-foreground flex items-center justify-center">

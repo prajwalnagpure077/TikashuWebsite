@@ -1,4 +1,6 @@
-import { Users, Heart, Gamepad2, Sparkles } from "lucide-react";
+import { Users, Heart, Gamepad2, Sparkles, Linkedin } from "lucide-react";
+import prajwalPhoto from "@/assets/prajwal-profile.png";
+import blankPhoto from "@/assets/blank-profile.png";
 
 const features = [
   {
@@ -27,12 +29,31 @@ const features = [
   },
 ];
 
+// Add your co-founders here
+const coFounders = [
+  {
+    name: "Prajwal Nagpure",
+    role: "Founder & CEO",
+    image: prajwalPhoto, // Replace with actual path
+    linkedin: "https://www.linkedin.com/in/prajwal-nagpure/",
+    bio: "Passionate about creating joyful experiences through games.",
+  },
+  {
+    name: "Jagannath Nagpure",
+    role: "Co-Founder & Non Executive Director",
+    image: blankPhoto,
+    // linkedin: "https://linkedin.com/in/cofounderprofile",
+    // bio: "Building beautiful systems and magical player moments.",
+  },
+  // Add more co-founders as needed
+];
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 md:py-32 relative overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-muted/30 -z-10" />
-      
+
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
@@ -42,44 +63,29 @@ const AboutSection = () => {
                 About Us
               </span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
-                A solo dev making {" "}
-                <span className="italic">unforgettable</span>{" "}
-                adventures
+                A small team crafting{" "}
+                <span className="italic">unforgettable</span> adventures
               </h2>
             </div>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Lantensoft Games was born from late-night developement and a shared dream: 
-              to create worlds that spark joy and bring people together. We're a small 
-              but we believe that 
-              the best games come from genuine curiosity.
+              Tikashu Games was born from late-night development and a shared dream:
+              to create worlds that spark joy and bring people together. We’re a small but passionate team
+              that believes the best games come from genuine curiosity and friendship.
             </p>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our studio feels more like a treehouse than an office—filled with 
-              sketches, snacks, and the occasional spontaneous dance break. We work 
-              hard, play harder, and never forget why we started: to make games that 
-              feel like coming home.
+              We work hard, play harder, and never forget why we started: to make games that feel like coming home.
             </p>
 
             <div className="flex items-center gap-6 pt-4">
               <div className="text-center">
-                <div className="text-4xl font-heading font-bold text-foreground">1</div>
-                <div className="text-sm text-muted-foreground">Team Members</div>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div className="text-center">
-                <div className="text-4xl font-heading font-bold text-foreground">1</div>
+                <div className="text-4xl font-heading font-bold text-foreground">2</div>
                 <div className="text-sm text-muted-foreground">Games in Production</div>
               </div>
-              {/* <div className="w-px h-12 bg-border" />
-              <div className="text-center">
-                <div className="text-4xl font-heading font-bold text-foreground">500K+</div>
-                <div className="text-sm text-muted-foreground">Players</div>
-              </div> */}
             </div>
           </div>
-          
+
           {/* Right - Feature cards */}
           <div className="grid sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
@@ -97,6 +103,55 @@ const AboutSection = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {feature.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ==================== CO-FOUNDERS SECTION ==================== */}
+        <div className="mt-24">
+          <div className="text-center mb-12">
+            <h3 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">
+              Meet the Co-Founders
+            </h3>
+            <p className="text-muted-foreground max-w-md mx-auto">
+              The dreamers and builders behind Tikashu Games
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coFounders.map((founder, index) => (
+              <div
+                key={index}
+                className="group bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-foreground transition-all duration-300"
+              >
+                <div className="aspect-square relative overflow-hidden">
+                  <img
+                    src={founder.image}
+                    alt={founder.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {founder.linkedin && (
+                    <a
+                      href={founder.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 bg-black/70 hover:bg-black text-white p-3 rounded-full transition-all backdrop-blur-sm"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+
+                <div className="p-6">
+                  <h4 className="font-heading font-semibold text-xl text-foreground">
+                    {founder.name}
+                  </h4>
+                  <p className="text-foreground font-medium mt-1">{founder.role}</p>
+                  <p className="text-muted-foreground text-sm mt-4 leading-relaxed">
+                    {founder.bio}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

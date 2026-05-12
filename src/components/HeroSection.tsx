@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Space } from "lucide-react";
 import heroIllustration from "@/assets/hero-illustration.png";
 
 const HeroSection = () => {
@@ -24,15 +24,15 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              We make games
+              We Make Co-op
+              {/* <br /> */}
+              <span className="italic"> and Chaotic</span>
               <br />
-              <span className="italic">with friends,</span>
-              <br />
-              for friends.
+              Games
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              A cozy game studio where creativity meets friendship. We craft whimsical PC and console adventures that bring people together.
+              A game studio where creativity meets friendship. We craft whimsical PC and console adventures that bring people together.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.3s" }}>

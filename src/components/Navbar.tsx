@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
+import logo_full_light from "@/assets/logo-full-light.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +18,21 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          {/* <a href="#" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-primary flex items-center justify-center group-hover:bg-transparent border-2 border-primary transition-all duration-200">
               <Sparkles className="w-5 h-5 text-primary-foreground group-hover:text-primary-foreground transition-colors" />
             </div>
             <span className="font-heading font-bold text-xl text-background uppercase tracking-wider">
-              LantenSoft
+              Tikashu Games
             </span>
+          </a> */}
+          {/* Logo */}
+          <a href="#" className="flex items-center group">
+            <img
+              src={logo_full_light}
+              alt="Tikashu Games"
+              className="h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Navigation */}

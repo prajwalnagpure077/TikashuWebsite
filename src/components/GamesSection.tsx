@@ -17,6 +17,18 @@ const games = [
   //   featured: true,
   // },
   {
+    id: 2,
+    title: "Tribal: Survival Exam",
+    description: "A Tribal Survival Exam",
+    image: game1,
+    platforms: ["PC"],
+    status: "Coming Soon",
+    rating: null,
+    featured: true,
+    url: "https://discord.gg/KpSZRphV8x",
+    cta: "Join Discord"
+  },
+  {
     id: 3,
     title: "FOOLz",
     description: "A Stone age multiplayer chaos.",
@@ -25,10 +37,11 @@ const games = [
     status: "Coming Soon",
     rating: null,
     featured: true,
-    url: "https://store.steampowered.com/app/4235060/Foolz/"
+    url: "https://store.steampowered.com/app/4235060/Foolz/",
+    cta: "Wishlist"
   },
   {
-    id: 2,
+    id: 4,
     title: "GenFlow",
     description: "A Procedural object placement tool",
     image: game2,
@@ -36,6 +49,8 @@ const games = [
     status: "Available Now",
     rating: null,
     featured: true,
+    url: "https://assetstore.unity.com/packages/tools/level-design/genflow-363404",
+    cta: "Learn More"
   },
 ];
 
@@ -82,8 +97,8 @@ const GamesSection = () => {
 
                   {/* Status badge */}
                   <div className={`absolute top-4 left-4 px-3 py-1 text-xs font-heading font-semibold uppercase tracking-wider ${game.status === "Available Now"
-                      ? "bg-foreground text-background"
-                      : "bg-background text-foreground border-2 border-foreground"
+                    ? "bg-foreground text-background"
+                    : "bg-background text-foreground border-2 border-foreground"
                     }`}>
                     {game.status}
                   </div>
@@ -120,9 +135,9 @@ const GamesSection = () => {
                   </div>
 
                   {/* CTA */}
-                  <Button variant="ghost" className="w-full group/btn">
-                    {game.status === "Available Now" ? "Learn More" : "Wishlist"}
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                  <Button variant="ghost" className="w-full group/btn" disabled={!game.url} >
+                    {game.cta}
+                    {game.cta ? <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" /> : ""}
                   </Button>
                 </CardContent>
               </Card>
