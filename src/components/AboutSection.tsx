@@ -1,6 +1,7 @@
 import { Users, Heart, Gamepad2, Sparkles, Linkedin } from "lucide-react";
 import prajwalPhoto from "@/assets/prajwal-profile.png";
 import blankPhoto from "@/assets/blank-profile.png";
+import logo3d from "@/assets/logo-3d.png";
 
 const features = [
   {
@@ -86,8 +87,16 @@ const AboutSection = () => {
             </div>
           </div>
 
+          {/* <div className="relative w-full aspect-square sm:aspect-video animate-fade-in"> */}
+            <img
+                    src={logo3d}
+                    alt={""}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+          {/* </div> */}
+
           {/* Right - Feature cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          {/* <div className="grid sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <div
                 key={feature.title}
@@ -105,7 +114,7 @@ const AboutSection = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* ==================== CO-FOUNDERS SECTION ==================== */}

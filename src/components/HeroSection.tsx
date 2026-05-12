@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Space } from "lucide-react";
+// import heroIllustration from "@/assets/hero-illustration.png";
 import heroIllustration from "@/assets/hero-illustration.png";
 
 const HeroSection = () => {
@@ -40,7 +41,7 @@ const HeroSection = () => {
                 Explore Our Games
                 <ArrowRight className="w-5 h-5" />
               </Button> */}
-              <a href="https://www.youtube.com/watch?v=-JzpNXiZVHQ" target="_blank">
+              <a href="https://youtu.be/sEwrQW_z140" target="_blank">
                 <Button variant="hero-outline">
                   <Play className="w-5 h-5" />
                   Watch Trailer
