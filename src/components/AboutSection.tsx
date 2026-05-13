@@ -1,5 +1,6 @@
 import { Users, Heart, Gamepad2, Sparkles, Linkedin } from "lucide-react";
 import prajwalPhoto from "@/assets/prajwal-profile.png";
+import jagannathPhoto from "@/assets/jagannath-profile.png";
 import blankPhoto from "@/assets/blank-profile.png";
 import logo3d from "@/assets/logo-3d.png";
 
@@ -42,7 +43,7 @@ const coFounders = [
   {
     name: "Jagannath Nagpure",
     role: "Co-Founder & Non Executive Director",
-    image: blankPhoto,
+    image: jagannathPhoto,
     // linkedin: "https://linkedin.com/in/cofounderprofile",
     // bio: "Building beautiful systems and magical player moments.",
   },
