@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tikashu Private Limited - Investor Pitch Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Geometric, playful header font combined with hyper-readable geometric body font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. CORE RESET & VISUAL STABILITY */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #050508;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: 0;
+            padding: 40px 0;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Fixed Dimensions Slide Container - Exactly 1280x720 for presentation continuity */
+        .slide-container {
+            align-items: center;
+            background-color: #0b0c11;
+            border: 2px solid #1f202a;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            height: 720px;
+            justify-content: center;
+            overflow: hidden;
+            padding: 60px 80px;
+            position: relative;
+            width: 1280px;
+        }
+
+        /* Gorgeous glowing gradient accent points reflecting chaotic gameplay energy */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(181, 255, 43, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-container::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-container>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 2. TYPOGRAPHY RULES */
+        .slide-container h1,
+        .slide-container h2 {
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .slide-container h3 {
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 700;
+            color: #b5ff2b;
+            /* Vibrant Lime Accent */
+            margin: 0 0 10px 0;
+            font-size: 26px;
+        }
+
+        .slide-container p,
+        .slide-container li,
+        .slide-container .subtitle,
+        .slide-container .number-label {
+            color: #94a3b8;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* Top-Left Standardized Slide Title */
+        .slide-container .slide-title {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
+            text-align: left;
+            width: 100%;
+            text-transform: uppercase;
+            color: #ffffff;
+            border-left: 5px solid #b5ff2b;
+            padding-left: 15px;
+        }
+
+        .slide-container .content-area {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* 3. LAYOUT SPECIFICS */
+
+        /* Title Slide Layout */
+        .title-layout {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .title-layout h1 {
+            font-size: 72px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #b5ff2b 0%, #ff6b35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .title-layout .subtitle {
+            font-size: 24px;
+            color: #f8fafc;
+            margin: 0 auto 20px auto;
+        }
+
+        .title-layout .investment-badge {
+            display: inline-block;
+            background-color: rgba(168, 85, 247, 0.15);
+            border: 1px solid #a855f7;
+            color: #a855f7;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Image Right Text Left Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            border-radius: 16px;
+            height: 400px;
+            width: 100%;
+            overflow: hidden;
+            border: 2px solid #1f202a;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .two-column.tiled {
+            align-items: stretch;
+        }
+
+        .two-column.tiled>div {
+            background-color: #12131a;
+            border: 1px solid #22232e;
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Highlighted Numbers Layout (Traction) */
+        .highlight-numbers-layout>div:first-child {
+            flex: 0 0 45%;
+            text-align: center;
+        }
+
+        .highlight-numbers-layout .number {
+            font-size: 110px;
+            font-weight: 800;
+            line-height: 1;
+            color: #b5ff2b;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -2px;
+        }
+
+        .highlight-numbers-layout .number-subtext {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-top: 10px;
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        .highlight-numbers-layout .number-label {
+            font-size: 20px;
+            color: #f8fafc;
+            margin-top: 5px;
+        }
+
+        /* Tiled Content (Cheat Code / Strategy) */
+        .tiled-content {
+            display: flex;
+            gap: 25px;
+            width: 100%;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .tile {
+            background-color: #12131a;
+            border: 1px solid #22232e;
+            border-radius: 16px;
+            padding: 40px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+        }
+
+        .tile .icon {
+            color: #ff6b35;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .tile .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(181, 255, 43, 0.15);
+            color: #b5ff2b;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Bleed Image Right Layout Rules (Strictly following CSS structure) */
+        .slide-container.bleed-image-layout {
+            align-items: start;
+            display: grid;
+            gap: 50px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0;
+        }
+
+        .slide-container.bleed-image-layout>.content-container {
+            padding: 60px 0 60px 80px;
+        }
+
+        .slide-container.bleed-image-layout>.image-container {
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .slide-container.bleed-image-layout img.bleed-image-side {
+            border-radius: 0 16px 16px 0;
+            display: block;
+            height: 720px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Doughnut Chart for Proportions Styling */
+        .doughnut-chart-container {
+            align-items: center;
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .doughnut-chart {
+            border-radius: 50%;
+            height: 350px;
+            width: 350px;
+            background: conic-gradient(#b5ff2b 0% 60%,
+                    /* Publishing - 60% */
+                    #a855f7 60% 80%,
+                    /* Servers - 20% */
+                    #ff6b35 80% 95%,
+                    /* HR - 15% */
+                    #38bdf8 95% 100%
+                    /* Tools - 5% */
+                );
+            position: relative;
+        }
+
+        /* Make it look like a doughnut hole */
+        .doughnut-chart::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background-color: #0b0c11;
+            border-radius: 50%;
+        }
+
+        .legend {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .legend li {
+            align-items: center;
+            color: #f8fafc;
+            display: flex;
+            font-size: 20px;
+        }
+
+        .legend .color-box {
+            border-radius: 6px;
+            height: 24px;
+            margin-right: 15px;
+            width: 24px;
+        }
+
+        /* Timeline Layout Rules */
+        .timeline-layout {
+            align-items: stretch;
+            display: flex;
+            height: 320px;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .timeline-layout .timeline-line {
+            background-color: #1f202a;
+            height: 4px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-2px);
+            width: 100%;
+            z-index: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            text-align: center;
+            width: 22%;
+        }
+
+        .timeline-item::after {
+            background-color: #0b0c11;
+            border-radius: 50%;
+            border: 4px solid #b5ff2b;
+            content: '';
+            height: 20px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item .content-wrapper {
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) .content-wrapper {
+            bottom: 50%;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:nth-child(even) .content-wrapper {
+            margin-top: 25px;
+            top: 50%;
+        }
+
+        /* Q&A / Contact Layout */
+        .qa-layout {
+            text-align: center;
+            z-index: 10;
+        }
+
+        .qa-layout h2 {
+            font-size: 72px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #b5ff2b 0%, #ff6b35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .qa-layout .contact-info {
+            color: #ffffff;
+            font-size: 22px;
+            margin-top: 50px;
+            font-weight: 500;
+        }
+    </style>
+    <style>
+        .lms-source-label {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: #e0e0e0;
+            color: #333333;
+            border-radius: 10px;
+            padding: 4px 4px;
+            font-family: sans-serif;
+            font-size: 10px;
+            pointer-events: none;
+            font-weight: 500;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <style>
+        :where(.slide-attributions) {
+            padding: 60px;
+        }
+
+        .attribution-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .attribution-list__item {
+            align-items: center;
+            border-bottom: 1px solid #757575;
+            display: grid;
+            gap: 25px;
+            grid-template-columns: 90px 1fr;
+            padding: 15px 0;
+            margin: 0 !important;
+        }
+
+        .attribution-list__item::before {
+            display: none;
+        }
+
+        .attribution-list__item::after {
+            display: none;
+        }
+
+        .attribution-list__item:last-child {
+            border-bottom: none;
+        }
+
+        .attribution-list__item .attribution__thumbnail {
+            height: 50px;
+            width: 90px;
+        }
+
+        .attribution__thumbnail .attribution__thumbnail__image {
+            border-radius: 8px;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .attribution__details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .attribution__details .attribution__raw-url {
+            color: inherit;
+            font-size: 13px;
+            margin: 0;
+            word-break: break-all;
+        }
+
+        .attribution__details .attribution__title {
+            color: inherit;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .attribution__details .attribution__title>.attribution__link {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Slide 1: Cover (Title_Slide) -->
+    <div class="slide-container" id="slide1">
+        <div class="title-layout">
+            <h1>TIKASHU</h1>
+            <p class="subtitle" style="font-family: 'Comfortaa', sans-serif;">Building highly profitable, viral co-op
+                games.</p>
+            <div class="investment-badge">$300k Seed Funding Pitch</div>
+        </div>
+    </div>
+
+    <!-- NEW Slide 2: The Problem -->
+    <div class="slide-container" id="slide2">
+        <h2 class="slide-title" style="border-left-color: #ff6b35;">THE PROBLEM: GAMING IS A BLIND GAMBLE</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="tile" style="border-color: #311c16; background-color: #170d0b;">
+                    <div class="icon" style="color: #ff6b35;"><i class="fa-solid fa-money-bill-wave"></i></div>
+                    <h3 style="color: #ff6b35;">Expensive & Slow</h3>
+                    <p>Traditional studios spend years and millions of dollars building a game in secret before anyone
+                        even plays it.</p>
+                </div>
+                <div class="tile" style="border-color: #311c16; background-color: #170d0b;">
+                    <div class="icon" style="color: #ff6b35;"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3 style="color: #ff6b35;">Sky-High Marketing</h3>
+                    <p>Marketing costs are exploding. Getting a single player to notice a new game costs studios a
+                        fortune.</p>
+                </div>
+                <div class="tile" style="border-color: #311c16; background-color: #170d0b;">
+                    <div class="icon" style="color: #ff6b35;"><i class="fa-solid fa-skull-crossbones"></i></div>
+                    <h3 style="color: #ff6b35;">Massive Failure Rate</h3>
+                    <p>Most games launch to zero players because they built something nobody actually wanted. Investors
+                        lose everything.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW Slide 3: The Solution (Formerly The Opportunity) -->
+    <div class="slide-container" id="slide3">
+        <h2 class="slide-title">THE SOLUTION: BUILT-IN VIRALITY</h2>
+        <div class="content-area">
+            <div class="two-column">
+                <div>
+                    <h3>Co-Op = Free Marketing</h3>
+                    <p style="margin-bottom: 20px;">We <strong>only</strong> make Chaotic Co-Op Games. Nobody plays our
+                        games alone.</p>
+                    <p style="margin-bottom: 20px;">If one person buys our game, they have to convince 3 of their
+                        friends to buy it too so they can play together.</p>
+                    <p style="color: #b5ff2b; font-weight: bold;">Our customers become our sales team, driving our
+                        marketing costs down to near zero.</p>
+                </div>
+                <div>
+                    <div class="image-wrapper"><img alt="Group of friends gaming together"
+                            src="https://images.stockcake.com/public/7/d/d/7dd0c462-4110-484c-9460-ab4d4a45538f_large/excited-friends-gaming-stockcake.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Strategy / Risk Mitigation (Tiled_Text_With_Icons) -->
+    <div class="slide-container" id="slide4">
+        <h2 class="slide-title">HOW WE DE-RISK INVESTMENT</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="tile">
+                    <span class="badge">STEP 1</span>
+                    <div class="icon" style="color: #b5ff2b;"><i class="fa-solid fa-stopwatch"></i></div>
+                    <h3>Build Fast</h3>
+                    <p>Instead of spending years and millions blindly, we build a 30-second playable prototype in just a
+                        few weeks.</p>
+                </div>
+                <div class="tile">
+                    <span class="badge">STEP 2</span>
+                    <div class="icon" style="color: #a855f7;"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <h3>Test with Influencers</h3>
+                    <p>We pay online influencers a small amount to play the prototype. If the internet ignores it, we
+                        kill the idea.</p>
+                </div>
+                <div class="tile">
+                    <span class="badge">STEP 3</span>
+                    <div class="icon" style="color: #ff6b35;"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Scale Only Winners</h3>
+                    <p>If the video goes viral and players beg for the game, we know it will make money. Only then do we
+                        build the full game.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Real Proof / Product (Bleed_Image_Right) -->
+    <div class="slide-container bleed-image-layout" id="slide5">
+        <div class="content-container">
+            <h2 class="slide-title">PROVEN HIT: TRIBAL</h2>
+            <div class="content-area">
+                <div class="bleed-text-side">
+                    <h3>Our First Tested Idea</h3>
+                    <p>Tribal is a chaotic co-op survival game. Players must work together to build a village while
+                        everything goes wrong.</p>
+                    <p>It is designed specifically to make players yell, laugh, and create funny video clips for social
+                        media.</p>
+                    <p style="color: #b5ff2b; font-weight: bold; margin-top: 20px;">We ran our Influencer Test on
+                        Tribal. The results were explosive.</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img class="bleed-image-side" alt="Chaotic cartoon cooperative multiplayer game art"
+                src="https://www.lemon8-app.com/seo/image?item_id=7428793062354420230&index=2&sign=08af29fdbb4dfed9f826d57deba4e116">
+        </div>
+    </div>
+
+    <!-- Slide 6: Traction (Highlighted_Numbers) -->
+    <div class="slide-container" id="slide6">
+        <h2 class="slide-title">INSANE TRACTION</h2>
+        <div class="content-area">
+            <div class="two-column highlight-numbers-layout" style="align-items: center;">
+                <div>
+                    <div class="number">4M+</div>
+                    <div class="number-subtext">Total Views</div>
+                    <div class="number-label">Across Influencer Posts</div>
+                </div>
+                <div>
+                    <h3>We spent exactly $5,000:</h3>
+                    <p style="color: #f8fafc; font-size: 24px; font-weight: 600; margin-bottom: 15px;">We got 8,000
+                        Steam Wishlists.</p>
+                    <p>By spending just $5k on paid influencers, we generated 4 million views and acquired 8,000 highly
+                        motivated buyers (wishlists).</p>
+                    <p style="color: #a855f7; font-weight: 600; margin-top: 15px;">This proves our marketing model is
+                        incredibly cheap and highly profitable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Business Model (Two_Column_Tiled_Text) -->
+    <div class="slide-container" id="slide7">
+        <h2 class="slide-title">HOW WE MAKE MONEY</h2>
+        <div class="content-area">
+            <div>
+                <i class="fa-solid fa-cart-shopping" style="font-size: 40px; color: #b5ff2b; margin-bottom: 20px;"></i>
+                <h3 style="color: #ffffff;">Premium Game Sales</h3>
+                <p>Players must buy the game upfront to play. Since it is a co-op game, a single viral video often
+                    results in a group of 4 friends buying the game on the same day.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Budget / The Ask (Doughnut_Chart_For_Proportions) -->
+    <div class="slide-container" id="slide8">
+        <h2 class="slide-title">THE ASK: $300,000</h2>
+        <div class="content-area">
+            <div class="doughnut-chart-container">
+                <div class="doughnut-chart"></div>
+                <ul class="legend">
+                    <li>
+                        <div class="color-box" style="background-color: #b5ff2b;"></div><strong>Marketing & Influencers
+                            (60%)</strong> – $180k
+                    </li>
+                    <li>
+                        <div class="color-box" style="background-color: #a855f7;"></div><strong>Multiplayer Servers
+                            (20%)</strong> – $60k
+                    </li>
+                    <li>
+                        <div class="color-box" style="background-color: #ff6b35;"></div><strong>Human Resources
+                            (15%)</strong> – $45k
+                    </li>
+                    <li>
+                        <div class="color-box" style="background-color: #38bdf8;"></div><strong>Software & Tools
+                            (5%)</strong> – $15k
+                    </li>
+                </ul>
+            </div>
+            <p style="margin-top: 30px; text-align: center; max-width: 800px; font-weight: bold; color: #ffffff;">
+                The majority of funds are allocated to scale our proven influencer marketing strategy to drive massive
+                Day-1 sales for Tribal.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 9: 12-Month Road to Revenue (Timeline) -->
+    <div class="slide-container" id="slide9">
+        <h2 class="slide-title">PATH TO REVENUE</h2>
+        <div class="content-area">
+            <div class="timeline-layout">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>Months 1 - 2</h3>
+                        <p style="font-size: 16px;">Finalize Tribal development, run beta tests, and hit 50k wishlists.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>Months 3 - 4</h3>
+                        <p style="font-size: 16px;">Global Launch of Tribal. Begin collecting game sales and server
+                            revenue.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>Months 5 - 8</h3>
+                        <p style="font-size: 16px;">Rapidly build and influencer-test 3 new co-op game prototypes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>Months 9 - 12</h3>
+                        <p style="font-size: 16px;">Select the most viral prototype from testing and launch Game #2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Closing (Q&A) -->
+    <div class="slide-container" id="slide10">
+        <div class="qa-layout">
+            <h2>LET'S BUILD A HIT</h2>
+            <p class="subtitle" style="font-size: 26px; color: #94a3b8; font-family: 'Comfortaa', sans-serif;">Tikashu
+                Private Limited</p>
+            <div class="contact-info">
+                <p style="margin-bottom: 12px; color: #ffffff;"><i class="fa-solid fa-envelope"
+                        style="color: #b5ff2b; margin-right: 10px;"></i> invest@tikashu.com</p>
+                <p style="color: #94a3b8; font-size: 20px;">www.tikashu.com</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="slide-container slide-attributions" id="slide-attributions-1">
+        <h2 class="slide-title">Image Sources</h2>
+        <div class="content-area">
+            <ul class="attribution-list">
+                <li class="attribution-list__item">
+                    <div class="attribution__thumbnail"><img class="attribution__thumbnail__image"
+                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTzEuCk_sdzT8PaKWmW7JitlbjNvvM2ZNK800NgiIn7Jc1GKgGTFnasqRYsyY-x"
+                            alt="Thumbnail for stockcake.com"></div>
+                    <div class="attribution__details">
+                        <p class="attribution__raw-url">
+                            https://images.stockcake.com/public/7/d/d/7dd0c462-4110-484c-9460-ab4d4a45538f_large/excited-friends-gaming-stockcake.jpg
+                        </p>
+                        <p class="attribution__title">Source: <a
+                                href="https://stockcake.com/i/captivated-teen-audience_672663_1132243" target="_blank"
+                                class="attribution__link">stockcake.com</a></p>
+                    </div>
+                </li>
+                <li class="attribution-list__item">
+                    <div class="attribution__thumbnail"><img class="attribution__thumbnail__image"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUHo4eO8C-6FsEYX4W5E9j5v21zGXYcXi_HSslSKUAKFA7plnAKX0VaFbaZEht"
+                            alt="Thumbnail for www.lemon8-app.com"></div>
+                    <div class="attribution__details">
+                        <p class="attribution__raw-url">
+                            https://www.lemon8-app.com/seo/image?item_id=7428793062354420230&index=2&sign=08af29fdbb4dfed9f826d57deba4e116
+                        </p>
+                        <p class="attribution__title">Source: <a
+                                href="https://www.lemon8-app.com/jing.gamer/7428793062354420230?region=us"
+                                target="_blank" class="attribution__link">www.lemon8-app.com</a></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+</body>
+
+</html>
