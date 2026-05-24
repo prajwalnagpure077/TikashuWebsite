@@ -25,11 +25,7 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              We Make Co-op
-              {/* <br /> */}
-              <span className="italic"> and Chaotic</span>
-              <br />
-              Games
+              co-op games Developer and Publisher
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
