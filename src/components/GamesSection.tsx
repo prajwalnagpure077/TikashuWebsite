@@ -18,8 +18,8 @@ const games = [
   // },
   {
     id: 2,
-    title: "Tribal: Survival Exam",
-    description: "A Tribal Survival Exam",
+    title: "Tribal Mischief",
+    description: "Tribal Mischief is a mischief stone age adventure, co-op",
     image: game1,
     platforms: ["PC"],
     status: "Coming Soon",
