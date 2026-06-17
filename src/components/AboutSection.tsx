@@ -3,6 +3,7 @@ import prajwalPhoto from "@/assets/prajwal-profile.png";
 import jagannathPhoto from "@/assets/jagannath-profile.png";
 import blankPhoto from "@/assets/blank-profile.png";
 import logo3d from "@/assets/logo-3d.png";
+import sitePreview from "@/assets/SitePreview.png"
 
 const features = [
   {
@@ -89,11 +90,11 @@ const AboutSection = () => {
           </div>
 
           {/* <div className="relative w-full aspect-square sm:aspect-video animate-fade-in"> */}
-            <img
-                    src={logo3d}
-                    alt={""}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+          <img
+            src={logo3d}
+            alt={""}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
           {/* </div> */}
 
           {/* Right - Feature cards */}
@@ -165,6 +166,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
+          <img src={sitePreview} alt={"sitepreview"} className="collapse-content" />
         </div>
       </div>
     </section>
