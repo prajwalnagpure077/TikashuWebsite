@@ -50,11 +50,11 @@ const ContactSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 text-foreground/60">
             <div className="flex items-center gap-2">
               <Mail className="w-5 h-5" />
-              <span>hello@luminagames.studio</span>
+              <span></span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5" />
-              <span>Portland, Oregon</span>
+              <span></span>
             </div>
           </div>
 
