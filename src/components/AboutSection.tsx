@@ -166,7 +166,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-          <img src={sitePreview} alt={"sitepreview"} className="collapse-content" />
+          <img src={sitePreview} alt={"sitepreview"} className="hidden" />
         </div>
       </div>
     </section>

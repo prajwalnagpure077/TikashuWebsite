@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Star } from "lucide-react";
 import game1 from "@/assets/game-1.png";
 import game2 from "@/assets/game-2.png";
+import gameChickenMine from "@/assets/ChickenMine.png";
 import game3 from "@/assets/game-3.png";
 
 const games = [
@@ -16,6 +17,18 @@ const games = [
   //   rating: 4.8,
   //   featured: true,
   // },
+  {
+    id: 1,
+    title: "CHICKEN MINE",
+    description: "A mining game where you work as a chicken mine worker.",
+    image: gameChickenMine,
+    platforms: ["PC"],
+    status: "Coming Soon",
+    rating: null,
+    featured: true,
+    url: "https://discord.gg/KpSZRphV8x",
+    cta: "WISHLIST"
+  },
   {
     id: 2,
     title: "Tribal Mischief",
