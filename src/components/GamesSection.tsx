@@ -26,7 +26,7 @@ const games = [
     status: "Coming Soon",
     rating: null,
     featured: true,
-    url: "https://discord.gg/KpSZRphV8x",
+    url: "https://store.steampowered.com/app/5007100/CHICKEN_MINE/",
     cta: "WISHLIST"
   },
   {
@@ -63,7 +63,7 @@ const games = [
     rating: null,
     featured: true,
     url: "https://assetstore.unity.com/packages/tools/level-design/genflow-363404",
-    cta: "Learn More"
+    cta: "Asset Store"
   },
 ];
 
