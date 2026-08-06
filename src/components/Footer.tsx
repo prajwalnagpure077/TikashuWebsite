@@ -14,6 +14,7 @@ const Footer = () => {
     Support: [
       // { label: "Community", href: "https://discord.gg/yourlink" },
       { label: "+91 9270261236", href: "tel:+919270261236", newTab: false },
+      { label: "contact@tikashu.com", href: "mailto:contact@tikashu.com", newTab: false },
       // { label: "Privacy Policy", href: "/privacy" }
     ],
   };
